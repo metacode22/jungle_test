@@ -1,0 +1,40 @@
+<div class="card card-show" id="each-memo-${_id}">
+    <div>
+        <div class="card-body">
+            <p class="card-title" id="memo-title" >${title}</p>
+            <p class="card-text comment" id="memo-comment">${comment}</p>
+            <p class="card-text date-time" id="date">
+                <span>작성일자:</span>
+                <span>${writtenDate}</span>
+            </p>
+            <p class="card-text modify-time" id="modify-date">
+                <span>수정일자:</span>
+                <span>${modifyDate}</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="card-button-container">
+        <button onclick="modifyMemo('${_id}')" type="button" class="btn btn-secondary btn-sm" style="background-color:gray">수정
+        </button>
+        <button onclick="deleteMemo('${_id}')" type="button" class="btn btn-secondary btn-sm">삭제
+        </button>
+    </div>
+</div>
+<div class="card card-edit" id="each-memo-edit-${_id}" style="display:none">
+    <div>
+        <div class="card-body">
+            <div>
+                <input class="form-control"  id="memo-title-edit-${_id}" value="${title}">
+            </div>
+        <p class="my-4"></p>
+            <div>
+                <textarea class="form-control" rows="2" id="memo-comment-edit-${_id}">${comment}</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="card-button-container">
+        <button onclick="editMemo('${_id}')" type="button" class="btn btn-primary btn-sm">저장</button>
+        <button onclick="cancelEditMemo('${_id}')" type="button" class="btn btn-primary btn-sm">취소</button>
+    </div>
+</div>

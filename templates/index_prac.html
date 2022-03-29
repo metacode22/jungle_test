@@ -1,0 +1,46 @@
+<div class="card" style="width: 18rem">
+  <div class="card-body" id="memo-${_id}">
+    <h5 class="card-title">${title}</h5>
+    <hr />
+    <p class="card-text">${comment}</p>
+    <button
+      onclick="transformMemo('${_id}')"
+      id="btn-post-box"
+      type="button"
+      class="btn btn-info"
+      style="padding: 5px; font-size: small"
+    >
+      수정
+    </button>
+    <button
+      onclick="deleteMemo('${_id}')"
+      id="btn-post-box"
+      type="button"
+      class="btn btn-secondary"
+      style="padding: 5px; font-size: small"
+    >
+      삭제
+    </button>
+  </div>
+  <div class="new-memo" id="new-memo-${_id}" style="display: none">
+    <input
+      type="text"
+      class="form-control new-title"
+      id="new-title-${_id}"
+      value="${title}"
+    />
+    <textarea class="form-control new-text" id="new-text-${_id}" rows="3">
+    ${comment}</textarea
+    >
+    <p class="lead">
+      <button
+        onclick="updateMemo('${_id}')"
+        id="btn-post-box"
+        type="submit"
+        class="btn btn-success"
+      >
+        저장
+      </button>
+    </p>
+  </div>
+</div>
